@@ -3,6 +3,7 @@ const REQUEST_MONEY_INFO = 'REQUEST_MONEY_INFO';
 const RECEIVE_MONEY_INFO = 'RECEIVE_MONEY_INFO';
 const REQUEST_MONEY_FAILURE = 'REQUEST_MONEY_FAILURE';
 const USER_DEBT = 'USER_DEBT';
+const TOTAL_VALUE = 'TOTAL_VALUE';
 
 const userLoginEmail = (email) => ({
   type: USER_EMAIL,
@@ -38,14 +39,21 @@ export function fetchMonetary() {
   };
 }
 
+// const totalDevtValue = () => ({
+//   type: TOTAL_VALUE,
+//   debts,
+// });
+
 export {
   USER_EMAIL,
   REQUEST_MONEY_INFO,
   RECEIVE_MONEY_INFO,
   REQUEST_MONEY_FAILURE,
   USER_DEBT,
+  TOTAL_VALUE,
   userLoginEmail,
   requestMoneyInfo as userWallet,
   fetchFailureRequest,
   currentDebt,
+  // totalDevtValue,
 };

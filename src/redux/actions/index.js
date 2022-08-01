@@ -1,33 +1,51 @@
-const user = 'USER_LOGIN';
-const wallet = 'USER_WALLET';
-const fullWallet = 'FULL_WALLET';
+const USER_EMAIL = 'USER_LOGIN';
+const REQUEST_MONEY_INFO = 'REQUEST_MONEY_INFO';
+const RECEIVE_MONEY_INFO = 'RECEIVE_MONEY_INFO';
+const REQUEST_MONEY_FAILURE = 'REQUEST_MONEY_FAILURE';
+const USER_DEBT = 'USER_DEBT';
 
 const userLoginEmail = (email) => ({
-  type: user,
+  type: USER_EMAIL,
   email,
 });
 
-const userWallet = () => ({
-  type: wallet,
+const currentDebt = (debts) => ({
+  type: USER_DEBT,
+  debts,
 });
 
-const fetchWallet = (currencies) => ({
-  type: fullWallet,
+const requestMoneyInfo = () => ({
+  type: REQUEST_MONEY_INFO, // a única função dessa action é 'eu pedi os dados'
+});
+
+const receiveMoneyInfo = (currencies) => ({
+  type: RECEIVE_MONEY_INFO,
   currencies,
+});
+// object.keys(currencies)
+const fetchFailureRequest = () => ({
+  type: REQUEST_MONEY_FAILURE,
 });
 
 export function fetchMonetary() {
-  return (dispatch) => {
-    dispatch(userWallet());
-    return fetch('https://economia.awesomeapi.com.br/json/all')
-      .then((response) => response.json())
-      .then((currencies) => dispatch(fetchWallet(currencies)));
+  return async (dispatch) => {
+    dispatch(requestMoneyInfo());
+    const url = await fetch('https://economia.awesomeapi.com.br/json/all');
+    // avisar a aplicação que o fetch vai ser iniciado
+    const response = await url.json();
+    dispatch(receiveMoneyInfo(Object.keys(response)
+      .filter((e) => e !== 'USDT')));
   };
 }
 
 export {
-  user,
-  wallet,
+  USER_EMAIL,
+  REQUEST_MONEY_INFO,
+  RECEIVE_MONEY_INFO,
+  REQUEST_MONEY_FAILURE,
+  USER_DEBT,
   userLoginEmail,
-  userWallet,
+  requestMoneyInfo as userWallet,
+  fetchFailureRequest,
+  currentDebt,
 };

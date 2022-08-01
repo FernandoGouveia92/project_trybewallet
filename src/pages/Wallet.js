@@ -2,6 +2,7 @@ import React from 'react';
 
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import WalletForm from '../components/WalletForm';
 
 class Wallet extends React.Component {
   constructor() {
@@ -23,6 +24,7 @@ class Wallet extends React.Component {
         <h2 data-testid="email-field">{email}</h2>
         <p data-testid="total-field">{ totalCost }</p>
         <p data-testid="header-currency-field">BRL</p>
+        <WalletForm />
       </div>
     );
   }

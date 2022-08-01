@@ -51,7 +51,7 @@ class Login extends React.Component {
     console.log(this.btnValidator());
     return (
       <div className="login-container">
-        Login
+        <h1>Login</h1>
         <label htmlFor="email-input">
           E-mail:
           <input

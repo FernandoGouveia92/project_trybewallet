@@ -48,7 +48,6 @@ class Login extends React.Component {
   render() {
     const { btnRedirect, history: { push } } = this.props;
     const { validPassword, validEmail } = this.state;
-    console.log(this.btnValidator());
     return (
       <div className="login-container">
         <h1>Login</h1>

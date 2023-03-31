@@ -10,15 +10,15 @@ class Table extends Component {
       <table>
         <thead>
           <tr>
-            <th>Descrição</th>
-            <th>Tag</th>
-            <th>Método de pagamento</th>
-            <th>Valor</th>
-            <th>Moeda</th>
-            <th>Câmbio utilizado</th>
-            <th>Valor convertido</th>
-            <th>Moeda de conversão</th>
-            <th>Editar/Excluir</th>
+            <th data-testid="description-column">Descrição</th>
+            <th data-testid="tag-column">Tag</th>
+            <th data-testid="method-column">Método de pagamento</th>
+            <th data-testid="value-column">Valor</th>
+            <th data-testid="currency-column">Moeda</th>
+            <th data-testid="exchange-column">Câmbio utilizado</th>
+            <th data-testid="value-convert-column">Valor convertido</th>
+            <th data-testid="real-column">Moeda de conversão</th>
+            <th data-testid="buttons-column">Editar/Excluir</th>
           </tr>
         </thead>
         <tbody>
@@ -44,15 +44,15 @@ class Table extends Component {
                     >
                       Deletar
                     </button>
-                    <button
+                    {/* <button
                       type="button"
                       data-testid="edit-btn"
-                      // onClick={ () => {
-                      //   btnEdit();
-                      // } }
+                      onClick={ () => {
+                        btnEdit(i.id);
+                      } }
                     >
                       Editar
-                    </button>
+                    </button> */}
                   </td>
                 </tr>
               ))

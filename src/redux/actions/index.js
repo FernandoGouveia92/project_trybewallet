@@ -23,7 +23,6 @@ const receiveMoneyInfo = (currencies) => ({
   type: RECEIVE_MONEY_INFO,
   currencies,
 });
-// object.keys(currencies)
 const fetchFailureRequest = () => ({
   type: REQUEST_MONEY_FAILURE,
 });

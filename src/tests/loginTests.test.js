@@ -28,5 +28,5 @@ describe('Testes do LOGIN', () => {
   expect(passwordInput).not.toBeInTheDocument();
   expect(btnLogin).not.toBeInTheDocument();
     
-  })
+  });
 })

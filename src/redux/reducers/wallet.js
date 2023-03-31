@@ -1,6 +1,8 @@
 const WALLET_INITIAL_STATE = {
   currencies: [],
   expenses: [],
+  editor: false,
+  idToEdit: 0,
 };
 
 const wallet = (state = WALLET_INITIAL_STATE, action) => {
@@ -16,7 +18,6 @@ const wallet = (state = WALLET_INITIAL_STATE, action) => {
       expenses: [...state.expenses, action.debts],
     };
   case 'DELETE_EXPENSE':
-    console.log(action.debts);
     return {
       ...state,
       expenses: state.expenses.filter((item) => item.id !== action.debts),

@@ -17,7 +17,6 @@ class Header extends Component {
     const { email } = this.props;
     return (
       <div>
-        Header
         <h2 data-testid="email-field">{email}</h2>
         <p data-testid="total-field">
           {this.addTotalCost()}

@@ -3,6 +3,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { userLoginEmail } from '../redux/actions/index';
+import {
+  LoginContainer,
+  // LoginForm,
+  LoginHeading,
+  InputLabel,
+  InputField,
+  SubmitButton,
+  // ErrorMessage,
+} from '../styles/login/styles';
 
 class Login extends React.Component {
   constructor() {
@@ -49,27 +58,27 @@ class Login extends React.Component {
     const { btnRedirect, history: { push } } = this.props;
     const { validPassword, validEmail } = this.state;
     return (
-      <div className="login-container">
-        <h1>Login</h1>
-        <label htmlFor="email-input">
+      <LoginContainer>
+        <LoginHeading>Login</LoginHeading>
+        <InputLabel htmlFor="email-input">
           E-mail:
-          <input
+          <InputField
             name="validEmail"
             value={ validEmail }
             data-testid="email-input"
             onChange={ this.handleChange }
           />
-        </label>
-        <label htmlFor="password-input">
+        </InputLabel>
+        <InputLabel htmlFor="password-input">
           Password:
-          <input
+          <InputField
             name="validPassword"
             value={ validPassword }
             data-testid="password-input"
             onChange={ this.handleChange }
           />
-        </label>
-        <button
+        </InputLabel>
+        <SubmitButton
           htmlFor="btnEnter"
           type="submit"
           disabled={ this.btnValidator() }
@@ -79,8 +88,8 @@ class Login extends React.Component {
           } }
         >
           Entrar
-        </button>
-      </div>
+        </SubmitButton>
+      </LoginContainer>
     );
   }
 }

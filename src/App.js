@@ -1,19 +1,18 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import Login from './pages/Login';
 import Wallet from './pages/Wallet';
-import GlobalStyles from './styles/globalStyles';
+import { StyledSwitch } from './styles/router/styles';
 
 class App extends React.Component {
   render() {
     return (
-      <div>
-        <Switch>
-          <GlobalStyles />
-          <Route exact path="/" component={ Login } />
-          <Route path="/carteira" component={ Wallet } />
-        </Switch>
-      </div>
+      // <div>
+      <StyledSwitch>
+        <Route exact path="/" component={ Login } />
+        <Route path="/carteira" component={ Wallet } />
+      </StyledSwitch>
+      // </div>
     );
   }
 }

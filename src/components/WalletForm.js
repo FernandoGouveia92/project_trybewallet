@@ -2,6 +2,13 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { fetchMonetary, currentDebt } from '../redux/actions';
+import { FormContainer,
+  FormWallet,
+  WalletLabel,
+  SelectContainer,
+  Input,
+  Select,
+  Button } from '../styles/walletForm/styles';
 
 const initialStateForm = {
   value: '',
@@ -50,32 +57,31 @@ class WalletForm extends Component {
     const { currencies } = this.props;
     const { value, description, currency, method, tag } = this.state;
     return (
-      <div>
-        WalletForm
-        <form>
-          <label htmlFor="value-input">
+      <FormContainer>
+        <FormWallet>
+          <WalletLabel htmlFor="value-input">
             Valor:
-            <input
+            <Input
               data-testid="value-input"
               value={ value }
               onChange={ this.handleChange }
               name="value"
               type="number"
             />
-          </label>
-          <label htmlFor="description-input">
+          </WalletLabel>
+          <WalletLabel htmlFor="description-input">
             Descrição:
-            <input
+            <Input
               data-testid="description-input"
               value={ description }
               onChange={ this.handleChange }
               name="description"
               type="text"
             />
-          </label>
-          <label htmlFor="currencies">
+          </WalletLabel>
+          <SelectContainer htmlFor="currencies">
             Currency:
-            <select
+            <Select
               value={ currency }
               onChange={ this.handleChange }
               name="currency"
@@ -86,10 +92,11 @@ class WalletForm extends Component {
                   <option key={ index }>{e}</option>
                 ))
               }
-            </select>
-          </label>
-          <label htmlFor="payment-method">
-            <select
+            </Select>
+          </SelectContainer>
+          <SelectContainer htmlFor="payment-method">
+            Forma de pgto:
+            <Select
               data-testid="method-input"
               value={ method }
               onChange={ this.handleChange }
@@ -98,10 +105,11 @@ class WalletForm extends Component {
               <option>Dinheiro</option>
               <option>Cartão de crédito</option>
               <option>Cartão de débito</option>
-            </select>
-          </label>
-          <label htmlFor="tag-input">
-            <select
+            </Select>
+          </SelectContainer>
+          <SelectContainer htmlFor="tag-input">
+            Tag:
+            <Select
               data-testid="tag-input"
               value={ tag }
               onChange={ this.handleChange }
@@ -112,18 +120,18 @@ class WalletForm extends Component {
               <option>Trabalho</option>
               <option>Transporte</option>
               <option>Saúde</option>
-            </select>
-          </label>
-          <button
+            </Select>
+          </SelectContainer>
+          <Button
             type="button"
             onClick={ () => {
               this.handleAddExpense();
             } }
           >
             Adicionar Despesa
-          </button>
-        </form>
-      </div>
+          </Button>
+        </FormWallet>
+      </FormContainer>
     );
   }
 }

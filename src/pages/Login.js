@@ -5,12 +5,11 @@ import { connect } from 'react-redux';
 import { userLoginEmail } from '../redux/actions/index';
 import {
   LoginContainer,
-  // LoginForm,
+  LoginForm,
   LoginHeading,
   InputLabel,
   InputField,
   SubmitButton,
-  // ErrorMessage,
 } from '../styles/login/styles';
 
 class Login extends React.Component {
@@ -59,36 +58,39 @@ class Login extends React.Component {
     const { validPassword, validEmail } = this.state;
     return (
       <LoginContainer>
-        <LoginHeading>Login</LoginHeading>
-        <InputLabel htmlFor="email-input">
-          E-mail:
+        <LoginForm>
+          <LoginHeading>Login</LoginHeading>
+          <InputLabel htmlFor="email-input">
+            E-mail:
+          </InputLabel>
           <InputField
             name="validEmail"
             value={ validEmail }
             data-testid="email-input"
             onChange={ this.handleChange }
           />
-        </InputLabel>
-        <InputLabel htmlFor="password-input">
-          Password:
+          <InputLabel htmlFor="password-input">
+            Password:
+          </InputLabel>
           <InputField
             name="validPassword"
             value={ validPassword }
+            type="password"
             data-testid="password-input"
             onChange={ this.handleChange }
           />
-        </InputLabel>
-        <SubmitButton
-          htmlFor="btnEnter"
-          type="submit"
-          disabled={ this.btnValidator() }
-          onClick={ () => {
-            btnRedirect(validEmail);
-            push('/carteira');
-          } }
-        >
-          Entrar
-        </SubmitButton>
+          <SubmitButton
+            htmlFor="btnEnter"
+            type="submit"
+            disabled={ this.btnValidator() }
+            onClick={ () => {
+              btnRedirect(validEmail);
+              push('/carteira');
+            } }
+          >
+            Entrar
+          </SubmitButton>
+        </LoginForm>
       </LoginContainer>
     );
   }

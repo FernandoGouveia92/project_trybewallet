@@ -1,54 +1,52 @@
 import styled from 'styled-components';
 
-// Login Container
 const LoginContainer = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  width: 100vw;
   height: 100vh;
-  background-color: #f7f7f7;
+  /* background-color: #0B2447; */
 `;
 
-// Login Form
 const LoginForm = styled.form`
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
-  justify-content: center;
-  background-color: #fff;
-  padding: 20px;
+  background-color: #A5D7E8;
+  padding: 15px;
+  width: auto;
   border-radius: 5px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 `;
 
-// Login Heading
 const LoginHeading = styled.h1`
   font-size: 24px;
   margin-bottom: 20px;
 `;
 
-// Input Label
 const InputLabel = styled.label`
   font-size: 16px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+  padding-bottom: 9px;
 `;
 
-// Input Field
 const InputField = styled.input`
   padding: 10px;
   border: none;
   border-radius: 5px;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   font-size: 16px;
-  width: 100%;
+  width: 90%;
 `;
 
-// Submit Button
 const SubmitButton = styled.button`
   background-color: #4285f4;
   color: #fff;
   padding: 10px 20px;
+  margin-bottom: 10px;
   border: none;
   border-radius: 5px;
   font-size: 16px;

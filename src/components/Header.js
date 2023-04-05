@@ -22,7 +22,7 @@ class Header extends Component {
           <HeaderP data-testid="total-field">
             {this.addTotalCost()}
           </HeaderP>
-          <HeaderP data-testid="header-currency-field">Em BRL</HeaderP>
+          <HeaderP data-testid="header-currency-field">BRL</HeaderP>
         </HeaderMoneyCont>
       </HeaderDiv>
     );

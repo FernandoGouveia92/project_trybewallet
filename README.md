@@ -1,10 +1,27 @@
-# :construction: README em construção ! :construction:
-<!-- Olá, Tryber!
-Esse é apenas um arquivo inicial para o README do seu projeto.
-É essencial que você preencha esse documento por conta própria, ok?
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
-:warning: IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
--->
+# PROJETO Trybewallet
+
+O projeto Trybewallet foi um projeto desenvolvido para praticar o uso da uma ferramenta de gerenciamento de estado global, Redux. Feito durante o meu curso da Trybe de Web development Fullstack, foi um projeto que serviu para entender as vantagens e casos de uso dessa ferramenta tão poderosa.
+
+Gerenciar o estado de dados que são puxados através de APIs, e ter sua exibição e utilização manipulados pelo Redux dá outra perspectiva sobre como pensar na arquitetura de um aplicação.
+
+---
+
+#### COMPONENTES DESENVOLVIDOS POR MIM
+
+Todos os arquivos dentro da pasta /src foram criados e desenvolvidos por mim.
+
+---
+
+#### ARQUIVOS E/OU DIRETÓRIOS FEITOS PELA TRYBE
+
+Quaisquer outros arquivos/diretórios que fazem parte do projeto, foram providenciados pela Trybe School.
+
+---
+
+#### TECNOLOGIAS
+
+ReactJS, CSS, HTML5, Redux Tool Kit
+
+#### BREVE DESCRIÇÃO
+
+Neste projeto, foram aplicados conhecimentos sobre render, classes, estado global com Redux, styled components.
